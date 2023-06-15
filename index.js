@@ -55,7 +55,7 @@ function deleteTarefa(array) {
 
   deletar.forEach((button) => {
     button.addEventListener("click", (event) => {
-      const id = event.target.dataset.id;//id do botao
+      const id = event.target.dataset.id;//pegando id do botao
       const findTarefa = array.findIndex((tarefa) => tarefa.id === Number(id)); //comparar se id da tarefa é igual o id evento
       const removeItem = array.splice(findTarefa, 1);//remover
       renderizar(array);
@@ -79,7 +79,7 @@ function addTarefa(array) {
 
     newarray.id = array.length + 1;
     newarray.tarefa = input.value;
-  
+    input.value = ""
     array.push(newarray);
     newarray = {};
     renderizar(array);
